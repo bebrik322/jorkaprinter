@@ -1,0 +1,6 @@
+[Unit]
+Description=JorkaPrinter Maintenance for DeskJet_3630
+
+[Service]
+Type=oneshot
+ExecStart=/home/gleckson/.local/bin/jorka-maintenance --printer "DeskJet_3630"
