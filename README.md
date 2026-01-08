@@ -1,17 +1,8 @@
-# JorkaPrinter 🖨️
+# JorkaPrinter
 
-**JorkaPrinter** is a lightweight, automated maintenance bot for inkjet printers on Linux (CUPS). 
+**JorkaPrinter** is a maintenance bot for inkjet printers on Linux (CUPS). 
 
-It prevents ink clogging by monitoring printer usage logs. If the printer hasn't been used for a set period (default: 7 days), it automatically prints a minimal CMYK test pattern with the current date.
-
-## Features
-
-*   **Smart Monitoring:** Checks CUPS logs (`/var/log/cups/page_log`) to avoid unnecessary prints if you've used the printer recently.
-*   **Eco-Friendly:** 
-    *   Prints a small CMYK strip instead of a full page.
-    *   **Random Positioning:** Places the test pattern at a random location on the A4 page, allowing you to re-use the same sheet of paper multiple times.
-*   **Dynamic Generation:** Generates the test image on-the-fly with a timestamp.
-*   **Systemd Integration:** Runs automatically in the background as a user timer.
+If the printer hasn't been used for a set period (default: 7 days), it automatically prints a minimal CMYK test pattern with the current date. Script checks CUPS logs (`/var/log/cups/page_log`) to avoid unnecessary prints if you've used the printer recently. Test strip is printed at a random location on the A4 page, allowing you to re-use the same sheet of paper multiple times.
 
 ## Requirements
 
@@ -66,7 +57,3 @@ rm ~/.config/systemd/user/jorka-maintenance.*
 rm ~/.local/bin/jorka-maintenance
 systemctl --user daemon-reload
 ```
-
-## License
-
-MIT
